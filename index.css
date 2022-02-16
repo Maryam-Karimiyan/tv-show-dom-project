@@ -129,7 +129,7 @@ body{
 }
 .card:hover{
   box-shadow:1px -1px 20px rgba(107,119,141,1);
-  font-size: 3rem;
+  font-size: 2.2rem;
 }
 .card:hover .cards-img{
   width: 380px;
