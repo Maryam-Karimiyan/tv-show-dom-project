@@ -35,6 +35,8 @@ const makeCards = (result) => {
   const figure = document.createElement("figure");
   figure.classList.add("img-container");
 
+  const aEl=document.createElement('a');
+  aEl.setAttribute("href",result.url)
   const img = document.createElement("IMG");
   img.classList.add("cards-img");
   img.src = result.image.medium;
@@ -43,7 +45,8 @@ const makeCards = (result) => {
   figcaption.classList.add("cards-img-caption");
   figcaption.innerHTML = result.summary;
 
-  figure.appendChild(img);
+  aEl.appendChild(img);
+  figure.appendChild(aEl);
   figure.appendChild(figcaption);
 
   cardtop.appendChild(cardtopi);
@@ -55,14 +58,15 @@ const makeCards = (result) => {
 };
 const makeCardsBySearch = (shows) => {
   rowdiv.innerHTML = "";
-  const showresult = shows.filter(
-    (file) =>
-      file.name.toLowerCase().includes(searchtextBox.value.toLowerCase()) ||
-      file.summary.toLowerCase().includes(searchtextBox.value.toLowerCase())
-  );
-  showresult.forEach((element) => {
+  const showresult = shows.filter((file) => {
+    file.name.toLowerCase().includes(searchtextBox.value.toLowerCase()) ||
+    file.summary.toLowerCase().includes(searchtextBox.value.toLowerCase());
+  
+  });
+  showresult.forEach(element => {
     makeCards(element);
   });
+
   const numberof_found = document.querySelector(".numberof_found");
   if (searchtextBox.value.length !== 0) {
     numberof_found.style.display = "inline-block";
