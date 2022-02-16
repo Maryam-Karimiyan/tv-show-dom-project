@@ -7,49 +7,37 @@
     <title>Tv-Show</title>
     <link rel="stylesheet" href="./index.css" />
 
-     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
       <h1 class="welcome"><span> To The Tv Show</span></h1>
-
-      <div class="selection">
-        <span>Seasons:</span>
-        <select class="seasonsearch">
-          <option>All Seasons</option>
-          <option>Season01</option>
-          <option>Season02</option>
-          <option>Season03</option>
-          <option>Season04</option>
-          <option>Season05</option>
-        </select>
-        <span>Episodes:</span>
-        <select class="episodesearch">
-          <option>All Episodes</option>
-          <option>Episode01</option>
-          <option>Episode02</option>
-          <option>Episode03</option>
-          <option>Episode04</option>
-          <option>Episode05</option>
-          <option>Episode06</option>
-          <option>Episode07</option>
-          <option>Episode08</option>
-          <option>Episode09</option>
-          <option>Episode10</option>
-          <option>Episode11</option>
-          <option>Episode12</option>
-          <option>Episode13</option>
-        </select>
+      <div class="searchRow">
+        <div class="selection">
+          <span>Seasons:</span>
+          <select class="seasonsearch">
+            <option>All Episodes</option>
+          </select>
+        </div>
+        <div>
+          <input class="searchtextbox" type="search" placeholder="Search Your Word..." />
+        </div>
       </div>
     </header>
 
-    <section class="container">
+    <main class="container">
+      <h1 class="filmname">THE WIRE</h1>
       <div class="cards">
-        <div class="row">
-          
-        </div>
+        <div class="row"></div>
       </div>
-    </section>
+    </main>
 
     <footer class="footer"></footer>
 
