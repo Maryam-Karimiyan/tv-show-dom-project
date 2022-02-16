@@ -58,11 +58,10 @@ const makeCards = (result) => {
 };
 const makeCardsBySearch = (shows) => {
   rowdiv.innerHTML = "";
-  const showresult = shows.filter((file) => {
+  const showresult = shows.filter(file =>
     file.name.toLowerCase().includes(searchtextBox.value.toLowerCase()) ||
-    file.summary.toLowerCase().includes(searchtextBox.value.toLowerCase());
-  
-  });
+    file.summary.toLowerCase().includes(searchtextBox.value.toLowerCase())
+  );
   showresult.forEach(element => {
     makeCards(element);
   });
