@@ -5,7 +5,7 @@ const searchtextBox = document.querySelector(".searchtextbox");
 
 //====Function===//
 function AddEpisodes(shows) {
-  for (let result of shows) {
+  shows.map((result) => {
     const optionEl = document.createElement("option");
     if (result.number > 9) {
       optionEl.textContent = `Season0${result.season}Episode${result.number}`;
@@ -14,7 +14,7 @@ function AddEpisodes(shows) {
     }
 
     seasonsearch.appendChild(optionEl);
-  }
+  });
 }
 
 const makeCards = (result) => {
@@ -26,7 +26,12 @@ const makeCards = (result) => {
   cardtopi.innerHTML = '<i class="far fa-play-circle"></i>';
   cardtop.classList.add("card-top");
   cardtop.textContent = result.name;
-
+  const seasonEpisode = document.createElement("div");
+  if (result.number < 10) {
+    seasonEpisode.textContent = `Season0${result.season}Episode0${result.number}`;
+  } else {
+    seasonEpisode.textContent = `Season0${result.season}Episode${result.number}`;
+  }
   const figure = document.createElement("figure");
   figure.classList.add("img-container");
 
@@ -42,6 +47,7 @@ const makeCards = (result) => {
   figure.appendChild(figcaption);
 
   cardtop.appendChild(cardtopi);
+  cardtop.appendChild(seasonEpisode);
 
   section.appendChild(cardtop);
   section.appendChild(figure);
@@ -57,11 +63,18 @@ const makeCardsBySearch = (shows) => {
   showresult.forEach((element) => {
     makeCards(element);
   });
+  const numberof_found = document.querySelector(".numberof_found");
+  if (searchtextBox.value.length !== 0) {
+    numberof_found.style.display = "inline-block";
+    numberof_found.innerHTML = `Result Number: ${showresult.length}`;
+  } else {
+    numberof_found.innerHTML = "";
+  }
 };
 
 const makeImages = (shows) => {
   rowdiv.innerHTML = "";
-  for (let result of shows) {
+  shows.map((result) => {
     if (seasonsearch.selectedIndex === 0 && result.image) {
       makeCards(result);
     } else if (
@@ -77,7 +90,7 @@ const makeImages = (shows) => {
     ) {
       makeCards(result);
     }
-  }
+  });
 };
 
 //====Events====//
