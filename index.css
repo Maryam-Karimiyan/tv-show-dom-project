@@ -11,6 +11,8 @@ body{
   background-color: rgba(38,56,89,1);
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .searchtextbox{
   border-radius: 15px;
@@ -131,19 +133,105 @@ body{
   box-shadow:1px -1px 20px rgba(107,119,141,1);
   font-size: 2.2rem;
 }
-.card:hover .cards-img{
+/* .card:hover .cards-img{
   width: 380px;
-  cursor: pointer;
 
-}
+} */
 .cards-img:hover{
    width: 380px;
-  cursor: pointer;
+}
+
+
+@media (max-width: 1400px) {
+ .cards-img{
+   width: 200px;
+ }
+ .card:hover{
+   font-size: 1.1rem;
+ }
+ .cards-img:hover{
+  width: 250px;
+}
+.card:hover .cards-img-caption{
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.card-top{
+  font-size: 1rem;
 }
 
 
 
 
+
+.searchtextbox{
+  border-radius: 15px;
+  padding:3.5px ;
+  font-size: 0.9rem;
+  margin: 6px 16px;
+}
+.selection{
+    
+    color: #fff;
+    padding-left: 12px;
+}
+.selection select{
+    font-size: 0.9rem;
+    border-radius: 15px;
+    width: 160px;
+    margin: 6px 16px;
+    padding: 3.5px;
+}
+.selection span{
+    font-size: 1rem;
+}
+
+}
+@media (max-width: 800px) {
+ .cards-img{
+   width: 100px;
+ }
+ .card:hover{
+   font-size: 0.7rem;
+ }
+ .cards-img:hover{
+  width: 150px;
+}
+.card:hover .cards-img-caption{
+  display: inline-block;
+  font-size: 0.8rem;
+}
+.card-top{
+  font-size: 0.9rem;
+}
+.welcome{
+  font-size: 1.9rem;
+}
+
+
+
+.searchtextbox{
+  border-radius: 15px;
+  padding:2px ;
+  font-size: 0.5rem;
+  margin: 5px 15px;
+}
+.selection{
+    
+    color: #fff;
+    padding-left: 12px;
+}
+.selection select{
+    font-size: 0.5rem;
+    border-radius: 15px;
+    width: 100px;
+    margin: 5px 15px;
+    padding: 2px;
+}
+.selection span{
+    font-size: 0.8rem;
+}
+}
 
 
 
